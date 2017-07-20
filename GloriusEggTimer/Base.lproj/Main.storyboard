@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,20 +19,29 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="82a8904af9baf62ad821eaf5f0869201" translatesAutoresizingMaskIntoConstraints="NO" id="2k7-r1-i1F">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="firstView" image="82a8904af9baf62ad821eaf5f0869201" translatesAutoresizingMaskIntoConstraints="NO" id="2k7-r1-i1F">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <accessibility key="accessibilityConfiguration" identifier="firstView">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37a-5q-xOS">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="GloriusEggTimer" id="9RG-Ew-rFQ"/>
+                                    <navigationItem title="GloriusEggTimer" id="9RG-Ew-rFQ">
+                                        <barButtonItem key="rightBarButtonItem" title="Settings" id="xMC-a3-Rg1">
+                                            <connections>
+                                                <segue destination="FSs-cx-3Jz" kind="show" id="tfc-PW-UbU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVX-fd-6t8">
-                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="pause" id="C0y-8V-XB3">
                                         <connections>
@@ -54,7 +63,7 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKH-aY-dHc">
-                                <rect key="frame" x="20" y="130" width="374" height="52"/>
+                                <rect key="frame" x="16" y="130" width="288" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="569-H3-jdh"/>
                                 </constraints>
@@ -88,8 +97,82 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
+        <!--Second View-->
+        <scene sceneID="2K9-au-rki">
+            <objects>
+                <viewController storyboardIdentifier="view2" id="FSs-cx-3Jz" customClass="SecondView" customModule="GloriusEggTimer" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Di-1j-UaX"/>
+                        <viewControllerLayoutGuide type="bottom" id="TMB-nD-uGl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="am1-Gj-gxL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="secondView" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="O35-bA-kFS">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AGk-tf-9us">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="reply" id="tND-zo-0wd">
+                                        <connections>
+                                            <action selector="btnBack:" destination="FSs-cx-3Jz" id="kwl-7R-Yzm"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="4Lo-oY-Yxu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bR7-Xe-Fdj">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Time Settings" id="rdL-aO-EQ0"/>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tcM-bt-JBI">
+                                <rect key="frame" x="72" y="137" width="177" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQW-kz-esF">
+                                <rect key="frame" x="137" y="175" width="46" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnSave:" destination="FSs-cx-3Jz" eventType="touchUpInside" id="Beq-gU-p7X"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tcM-bt-JBI" firstAttribute="centerX" secondItem="bR7-Xe-Fdj" secondAttribute="centerX" id="0fU-Qr-Uy7"/>
+                            <constraint firstItem="tcM-bt-JBI" firstAttribute="top" secondItem="bR7-Xe-Fdj" secondAttribute="bottom" constant="73" id="6kH-lV-UAg"/>
+                            <constraint firstItem="tcM-bt-JBI" firstAttribute="leading" secondItem="am1-Gj-gxL" secondAttribute="leadingMargin" constant="56" id="9HL-42-yjG"/>
+                            <constraint firstItem="O35-bA-kFS" firstAttribute="leading" secondItem="am1-Gj-gxL" secondAttribute="leading" id="9eX-3Q-3Xy"/>
+                            <constraint firstItem="nQW-kz-esF" firstAttribute="top" secondItem="tcM-bt-JBI" secondAttribute="bottom" constant="8" id="PnN-Ib-Thz"/>
+                            <constraint firstItem="tcM-bt-JBI" firstAttribute="top" secondItem="am1-Gj-gxL" secondAttribute="top" constant="137" id="TeO-hg-dCs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nQW-kz-esF" secondAttribute="trailing" constant="121" id="XIJ-tc-4Lc"/>
+                            <constraint firstItem="O35-bA-kFS" firstAttribute="bottom" secondItem="TMB-nD-uGl" secondAttribute="top" id="pm7-F6-Fdx"/>
+                            <constraint firstItem="O35-bA-kFS" firstAttribute="top" secondItem="9Di-1j-UaX" secondAttribute="bottom" id="tFk-7V-Kkf"/>
+                            <constraint firstAttribute="trailing" secondItem="O35-bA-kFS" secondAttribute="trailing" id="uD6-1s-M9c"/>
+                            <constraint firstItem="tcM-bt-JBI" firstAttribute="centerX" secondItem="O35-bA-kFS" secondAttribute="centerX" id="uwF-RV-w5w"/>
+                            <constraint firstItem="nQW-kz-esF" firstAttribute="leading" secondItem="am1-Gj-gxL" secondAttribute="leadingMargin" constant="121" id="y3W-8A-o3f"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblView2Text" destination="tcM-bt-JBI" id="2mO-lN-vNx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ACY-7k-qcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057.5" y="138.38028169014083"/>
+        </scene>
     </scenes>
     <resources>
         <image name="82a8904af9baf62ad821eaf5f0869201" width="640" height="1136"/>
+        <image name="settings" width="744" height="1216"/>
     </resources>
 </document>

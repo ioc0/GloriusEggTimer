@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC550E261F20CC5200B20E57 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC550E251F20CC5200B20E57 /* SecondView.swift */; };
 		CCA7344B1F2098A000C1E25D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA7344A1F2098A000C1E25D /* AppDelegate.swift */; };
 		CCA7344D1F2098A000C1E25D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA7344C1F2098A000C1E25D /* ViewController.swift */; };
 		CCA734501F2098A000C1E25D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA7344E1F2098A000C1E25D /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC550E251F20CC5200B20E57 /* SecondView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		CCA734471F2098A000C1E25D /* GloriusEggTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GloriusEggTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA7344A1F2098A000C1E25D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA7344C1F2098A000C1E25D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				CCA734511F2098A000C1E25D /* Assets.xcassets */,
 				CCA734531F2098A000C1E25D /* LaunchScreen.storyboard */,
 				CCA734561F2098A000C1E25D /* Info.plist */,
+				CC550E251F20CC5200B20E57 /* SecondView.swift */,
 			);
 			path = GloriusEggTimer;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC550E261F20CC5200B20E57 /* SecondView.swift in Sources */,
 				CCA7344D1F2098A000C1E25D /* ViewController.swift in Sources */,
 				CCA7344B1F2098A000C1E25D /* AppDelegate.swift in Sources */,
 			);
@@ -306,6 +310,7 @@
 				CCA7345B1F2098A000C1E25D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

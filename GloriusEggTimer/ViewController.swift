@@ -11,8 +11,7 @@ import AudioToolbox
 
 class ViewController: UIViewController {
     var timer = Timer()
-    var te = 4
-    
+    var te = UserDefaults.standard.integer(forKey: "data")
     @IBOutlet weak var lblText1: UILabel!
     
     @IBAction func btnPause(_ sender: UIBarButtonItem) {
@@ -22,7 +21,7 @@ class ViewController: UIViewController {
     
     @IBAction func btnReset(_ sender: Any) {
         timer.invalidate()
-        te = 240
+        te = UserDefaults.standard.integer(forKey: "data")
         lblText1.text = String(te)
         
     }
@@ -35,7 +34,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(te == 0)
+        {
+            lblText1.text = "240"
+        }else
         
+        {
+            lblText1.text = String(te)
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
     func timeBack()
