@@ -1,26 +1,95 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GloriusEggTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="82a8904af9baf62ad821eaf5f0869201" translatesAutoresizingMaskIntoConstraints="NO" id="2k7-r1-i1F">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37a-5q-xOS">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="GloriusEggTimer" id="9RG-Ew-rFQ"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVX-fd-6t8">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="pause" id="C0y-8V-XB3">
+                                        <connections>
+                                            <action selector="btnPause:" destination="BYZ-38-t0r" id="oz3-Hj-QHP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tSP-pd-X59"/>
+                                    <barButtonItem title="Reset" id="S6C-ZQ-aXM">
+                                        <connections>
+                                            <action selector="btnReset:" destination="BYZ-38-t0r" id="JH8-Rl-ER9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EaB-qD-mdC"/>
+                                    <barButtonItem systemItem="play" id="hQJ-19-JHA">
+                                        <connections>
+                                            <action selector="btnPlay:" destination="BYZ-38-t0r" id="24E-Fl-7rL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKH-aY-dHc">
+                                <rect key="frame" x="20" y="130" width="374" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="569-H3-jdh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NKH-aY-dHc" firstAttribute="top" secondItem="37a-5q-xOS" secondAttribute="bottom" constant="66" id="EEl-kg-G3D"/>
+                            <constraint firstItem="2k7-r1-i1F" firstAttribute="leading" secondItem="37a-5q-xOS" secondAttribute="leading" id="EZQ-6Y-OA3"/>
+                            <constraint firstItem="2k7-r1-i1F" firstAttribute="trailing" secondItem="37a-5q-xOS" secondAttribute="trailing" id="KmB-f5-dNg"/>
+                            <constraint firstItem="2k7-r1-i1F" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Kp8-LM-OCb"/>
+                            <constraint firstAttribute="trailing" secondItem="2k7-r1-i1F" secondAttribute="trailing" id="Y89-ny-DGf"/>
+                            <constraint firstItem="2k7-r1-i1F" firstAttribute="leading" secondItem="MVX-fd-6t8" secondAttribute="leading" id="ZcZ-MT-yhA"/>
+                            <constraint firstItem="2k7-r1-i1F" firstAttribute="trailing" secondItem="MVX-fd-6t8" secondAttribute="trailing" id="b1W-oV-Dhu"/>
+                            <constraint firstItem="NKH-aY-dHc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="b3Y-lY-tit"/>
+                            <constraint firstItem="2k7-r1-i1F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iKk-m1-1db"/>
+                            <constraint firstItem="2k7-r1-i1F" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="lHE-3b-4xQ"/>
+                            <constraint firstItem="NKH-aY-dHc" firstAttribute="centerX" secondItem="37a-5q-xOS" secondAttribute="centerX" id="pww-k2-xlU"/>
+                            <constraint firstItem="2k7-r1-i1F" firstAttribute="bottom" secondItem="MVX-fd-6t8" secondAttribute="bottom" id="rOE-ac-Gvy"/>
+                            <constraint firstItem="2k7-r1-i1F" firstAttribute="top" secondItem="37a-5q-xOS" secondAttribute="top" id="tEN-ce-GB6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblText1" destination="NKH-aY-dHc" id="62g-yT-lwd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="82a8904af9baf62ad821eaf5f0869201" width="640" height="1136"/>
+    </resources>
 </document>

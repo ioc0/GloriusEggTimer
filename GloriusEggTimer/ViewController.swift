@@ -7,12 +7,50 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ViewController: UIViewController {
-
+    var timer = Timer()
+    var te = 4
+    
+    @IBOutlet weak var lblText1: UILabel!
+    
+    @IBAction func btnPause(_ sender: UIBarButtonItem) {
+       timer.invalidate()
+        
+    }
+    
+    @IBAction func btnReset(_ sender: Any) {
+        timer.invalidate()
+        te = 240
+        lblText1.text = String(te)
+        
+    }
+    @IBAction func btnPlay(_ sender: UIBarButtonItem) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.timeBack), userInfo: nil, repeats: true)
+        
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    func timeBack()
+    {
+        if (te > 0){
+        te -= 1
+        lblText1.text = String(te)
+        }
+        else
+        {
+            timer.invalidate()
+            lblText1.text = "Finished"
+            AudioServicesPlaySystemSound(1025)
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
