@@ -11,19 +11,27 @@ import UIKit
 
 class SecondView: UIViewController {
     
-    @IBOutlet weak var lblView2Text: UITextField!
+    @IBOutlet weak var minLabel: UILabel!
+   
+    @IBOutlet weak var secLabel: UILabel!
+    
+    @IBOutlet weak var minSlider: UISlider!
+    
+    @IBOutlet weak var secSlider: UISlider!
+    
+    @IBAction func minSliderAction(_ sender: Any) {
+        
+        minLabel.text = String(Int(minSlider.value))
+    }
+    
+    @IBAction func secSliderAction(_ sender: Any) {
+        secLabel.text = String(Int(secSlider.value))
+    }
     
     @IBAction func btnSave(_ sender: UIButton) {
-        
-        if(!(lblView2Text.text?.isEmpty)!)
-        {
-            UserDefaults.standard.set(Int(lblView2Text.text!), forKey: "data")
-            
-            print("not empty")
-        }else
-        {
-            print("empty")
-        }
+        let time = Int(minSlider.value) * 60 + Int(secSlider.value)
+        UserDefaults.standard.set(time, forKey: "time")
+        print(time)
     }
     @IBAction func btnBack(_ sender: UIBarButtonItem) {
        
@@ -36,7 +44,7 @@ class SecondView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("suprise Mother FUCKER")
+        
     }
     //Это модуль для клавиатуры
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
